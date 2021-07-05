@@ -1,6 +1,6 @@
 from faker import Faker
-from .find import FindUser
 from src.infra.test import UserRepositorySpy
+from .find import FindUser
 
 faker = Faker()
 
