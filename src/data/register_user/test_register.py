@@ -1,6 +1,6 @@
 from faker import Faker
-from .register import RegisterUser
 from src.infra.test import UserRepositorySpy
+from .register import RegisterUser
 
 faker = Faker()
 
