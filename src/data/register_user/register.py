@@ -1,7 +1,8 @@
 from typing import Type, Dict
+
 from src.data.interfaces import UserRepositoryInterface as UserRepository
-from src.domain.use_cases import RegisterUser as RegisterUserInterface
 from src.domain.models import Users
+from src.domain.use_cases import RegisterUser as RegisterUserInterface
 
 
 class RegisterUser(RegisterUserInterface):

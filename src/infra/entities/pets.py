@@ -1,6 +1,8 @@
 # pylint: disable=C0103
 import enum
+
 from sqlalchemy import Column, Integer, String, ForeignKey, Enum
+
 from src.infra.config import Base
 
 

@@ -1,4 +1,5 @@
 from typing import List
+
 from src.data.interfaces import UserRepositoryInterface
 from src.domain.models import Users
 from src.infra.config import DBConnectionHandler

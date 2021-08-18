@@ -1,4 +1,5 @@
 from faker import Faker
+
 from src.infra.config import DBConnectionHandler
 from src.infra.entities import Pets
 from src.infra.entities.pets import AnimalTypes

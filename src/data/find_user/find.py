@@ -1,4 +1,5 @@
 from typing import Dict, List, Type
+
 from src.data.interfaces import UserRepositoryInterface as UserRepository
 from src.domain.models import Users
 from src.domain.use_cases import FindUser as FindUserInterface

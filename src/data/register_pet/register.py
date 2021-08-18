@@ -1,4 +1,5 @@
 from typing import Dict, Type, List
+
 from src.data.find_user import FindUser
 from src.data.interfaces import PetRepositoryInterface as PetRepository
 from src.domain.models import Pets, Users
@@ -25,7 +26,7 @@ class RegisterPet(RegisterPetInterface):
 
         response = None
 
-        # Validade entry and try to find a user
+        # Validate entry and try to find a user
         validate_entry = isinstance(name, str) and isinstance(specie, str)
         user = self.__find_user_information(user_information)
 

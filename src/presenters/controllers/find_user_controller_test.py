@@ -95,7 +95,6 @@ def test_handle_no_query_params():
     http_request = HttpRequest()
 
     response = find_user_controller.handle(http_request)
-    print(response)
 
     # Testing Inputs
     assert find_user_use_case.by_id_and_name_param == {}
