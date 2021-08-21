@@ -52,7 +52,7 @@ def test_handle_user_id_only():
 
 
 def test_handle_user_name_only():
-    """Testing handle method"""
+    """Testing handle method with name only"""
 
     find_user_use_case = FindUserSpy(UserRepositorySpy())
     find_user_controller = FindUserController(find_user_use_case)
