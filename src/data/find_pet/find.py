@@ -18,12 +18,12 @@ class FindPet(FindPetInterface):
         """
 
         response = None
-        validade_entry = isinstance(pet_id, int)
+        validate_entry = isinstance(pet_id, int)
 
-        if validade_entry:
+        if validate_entry:
             response = self.pet_repository.select_pet(pet_id=pet_id)
 
-        return {"Success": validade_entry, "Data": response}
+        return {"Success": validate_entry, "Data": response}
 
     def by_user_id(self, user_id: int) -> Dict[bool, List[Pets]]:
         """Select user by user_id
@@ -32,12 +32,12 @@ class FindPet(FindPetInterface):
         """
 
         response = None
-        validade_entry = isinstance(user_id, int)
+        validate_entry = isinstance(user_id, int)
 
-        if validade_entry:
+        if validate_entry:
             response = self.pet_repository.select_pet(user_id=user_id)
 
-        return {"Success": validade_entry, "Data": response}
+        return {"Success": validate_entry, "Data": response}
 
     def by_pet_id_and_user_id(
         self, pet_id: int, user_id: int
@@ -49,9 +49,9 @@ class FindPet(FindPetInterface):
         """
 
         response = None
-        validade_entry = isinstance(user_id, int) and isinstance(pet_id, int)
+        validate_entry = isinstance(user_id, int) and isinstance(pet_id, int)
 
-        if validade_entry:
+        if validate_entry:
             response = self.pet_repository.select_pet(pet_id=pet_id, user_id=user_id)
 
-        return {"Success": validade_entry, "Data": response}
+        return {"Success": validate_entry, "Data": response}

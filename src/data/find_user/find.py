@@ -18,12 +18,12 @@ class FindUser(FindUserInterface):
         """
 
         response = None
-        validade_entry = isinstance(user_id, int)
+        validate_entry = isinstance(user_id, int)
 
-        if validade_entry:
+        if validate_entry:
             response = self.user_repository.select_user(user_id=user_id)
 
-        return {"Success": validade_entry, "Data": response}
+        return {"Success": validate_entry, "Data": response}
 
     def by_name(self, name: str) -> Dict[bool, List[Users]]:
         """Select user by name
@@ -32,12 +32,12 @@ class FindUser(FindUserInterface):
         """
 
         response = None
-        validade_entry = isinstance(name, str)
+        validate_entry = isinstance(name, str)
 
-        if validade_entry:
+        if validate_entry:
             response = self.user_repository.select_user(name=name)
 
-        return {"Success": validade_entry, "Data": response}
+        return {"Success": validate_entry, "Data": response}
 
     def by_id_and_name(self, user_id: int, name: str) -> Dict[bool, List[Users]]:
         """Select user by id and name
@@ -47,9 +47,9 @@ class FindUser(FindUserInterface):
         """
 
         response = None
-        validade_entry = isinstance(user_id, int) and isinstance(name, str)
+        validate_entry = isinstance(user_id, int) and isinstance(name, str)
 
-        if validade_entry:
+        if validate_entry:
             response = self.user_repository.select_user(user_id=user_id, name=name)
 
-        return {"Success": validade_entry, "Data": response}
+        return {"Success": validate_entry, "Data": response}
