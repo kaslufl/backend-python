@@ -9,7 +9,7 @@ faker = Faker()
 
 
 def test_route():
-    """Test route method in RegisterUserRouter with right params"""
+    """Test route method in RegisterPetRoute with right params"""
 
     register_pet_use_case = RegisterPetSpy(PetRepositorySpy(), None)
     register_pet_route = RegisterPetController(register_pet_use_case)
@@ -41,7 +41,7 @@ def test_route():
 
 
 def test_route_no_body():
-    """Test route method in RegisterUserRouter with no body"""
+    """Test route method in RegisterPetRoute with no body"""
 
     register_pet_use_case = RegisterPetSpy(PetRepositorySpy(), None)
     register_pet_route = RegisterPetController(register_pet_use_case)
@@ -56,7 +56,7 @@ def test_route_no_body():
 
 
 def test_route_wrong_body():
-    """Test route method in RegisterUserRouter with randoms params"""
+    """Test route method in RegisterPetRoute with randoms params"""
 
     register_pet_use_case = RegisterPetSpy(PetRepositorySpy(), None)
     register_pet_route = RegisterPetController(register_pet_use_case)
@@ -73,7 +73,7 @@ def test_route_wrong_body():
 
 
 def test_route_blank_user_params():
-    """Test route method in RegisterUserRouter with blank user params"""
+    """Test route method in RegisterPetRoute with blank user params"""
 
     register_pet_use_case = RegisterPetSpy(PetRepositorySpy(), None)
     register_pet_route = RegisterPetController(register_pet_use_case)
@@ -93,7 +93,7 @@ def test_route_blank_user_params():
 
 
 def test_route_without_age():
-    """Test route method in RegisterUserRouter without age param"""
+    """Test route method in RegisterPetRoute without age param"""
 
     register_pet_use_case = RegisterPetSpy(PetRepositorySpy(), None)
     register_pet_route = RegisterPetController(register_pet_use_case)

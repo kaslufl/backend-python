@@ -1,11 +1,9 @@
 appdirs==1.4.4
 astroid==2.6.2
-atomicwrites==1.4.0
 attrs==21.2.0
 black==21.6b0
 cfgv==3.3.0
 click==8.0.1
-colorama==0.4.4
 distlib==0.3.2
 Faker==8.9.0
 filelock==3.0.12

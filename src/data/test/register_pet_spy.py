@@ -5,6 +5,8 @@ from src.domain.test import mock_users, mock_pets
 
 
 class RegisterPetSpy:
+    """Class to define usecase: Register Pet"""
+
     def __init__(self, pet_repository: any, find_user: any):
         self.pet_repository = pet_repository
         self.find_user = find_user
