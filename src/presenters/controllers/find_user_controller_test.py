@@ -8,8 +8,8 @@ from .find_user_controller import FindUserController
 faker = Faker()
 
 
-def test_handle_user_id_and_user_name():
-    """Testing handle method with user_id and user_name"""
+def test_route_user_id_and_user_name():
+    """Testing route method with user_id and user_name"""
 
     find_user_use_case = FindUserSpy(UserRepositorySpy())
     find_user_controller = FindUserController(find_user_use_case)
@@ -17,7 +17,7 @@ def test_handle_user_id_and_user_name():
         query={"user_id": faker.random_number(), "user_name": faker.word()}
     )
 
-    response = find_user_controller.handle(http_request)
+    response = find_user_controller.route(http_request)
 
     # Testing Inputs
     assert (
@@ -34,14 +34,14 @@ def test_handle_user_id_and_user_name():
     assert response.body
 
 
-def test_handle_user_id_only():
-    """Testing handle method with user_id only"""
+def test_route_user_id_only():
+    """Testing route method with user_id only"""
 
     find_user_use_case = FindUserSpy(UserRepositorySpy())
     find_user_controller = FindUserController(find_user_use_case)
     http_request = HttpRequest(query={"user_id": faker.random_number()})
 
-    response = find_user_controller.handle(http_request)
+    response = find_user_controller.route(http_request)
 
     # Testing Inputs
     assert find_user_use_case.by_id_param["user_id"] == http_request.query["user_id"]
@@ -51,14 +51,14 @@ def test_handle_user_id_only():
     assert response.body
 
 
-def test_handle_user_name_only():
-    """Testing handle method with name only"""
+def test_route_user_name_only():
+    """Testing route method with name only"""
 
     find_user_use_case = FindUserSpy(UserRepositorySpy())
     find_user_controller = FindUserController(find_user_use_case)
     http_request = HttpRequest(query={"user_name": faker.word()})
 
-    response = find_user_controller.handle(http_request)
+    response = find_user_controller.route(http_request)
 
     # Testing Inputs
     assert find_user_use_case.by_name_param["name"] == http_request.query["user_name"]
@@ -68,14 +68,14 @@ def test_handle_user_name_only():
     assert response.body
 
 
-def test_handle_with_blank_params():
-    """Testing handle method with blank params"""
+def test_route_with_blank_params():
+    """Testing route method with blank params"""
 
     find_user_use_case = FindUserSpy(UserRepositorySpy())
     find_user_controller = FindUserController(find_user_use_case)
     http_request = HttpRequest(query={f"{faker.word()}": faker.word()})
 
-    response = find_user_controller.handle(http_request)
+    response = find_user_controller.route(http_request)
 
     # Testing Inputs
     assert find_user_use_case.by_id_and_name_param == {}
@@ -87,14 +87,14 @@ def test_handle_with_blank_params():
     assert "error" in response.body
 
 
-def test_handle_no_query_params():
-    """Testing handle method with no params"""
+def test_route_no_query_params():
+    """Testing route method with no params"""
 
     find_user_use_case = FindUserSpy(UserRepositorySpy())
     find_user_controller = FindUserController(find_user_use_case)
     http_request = HttpRequest()
 
-    response = find_user_controller.handle(http_request)
+    response = find_user_controller.route(http_request)
 
     # Testing Inputs
     assert find_user_use_case.by_id_and_name_param == {}
