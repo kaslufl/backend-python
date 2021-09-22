@@ -9,7 +9,7 @@ faker = Faker()
 
 
 def test_route():
-    """Test routo method in RegisterUserRoute with right params"""
+    """Test route method in RegisterUserRoute with right params"""
 
     register_user_use_case = RegisterUserSpy(UserRepositorySpy())
     register_user_route = RegisterUserController(register_user_use_case)
@@ -28,7 +28,7 @@ def test_route():
 
 
 def test_route_no_body():
-    """Test routo method in RegisterUserRoute with blank params"""
+    """Test route method in RegisterUserRoute with blank params"""
 
     register_user_use_case = RegisterUserSpy(UserRepositorySpy())
     register_user_route = RegisterUserController(register_user_use_case)
@@ -43,7 +43,7 @@ def test_route_no_body():
 
 
 def test_route_wrong_body():
-    """Test routo method in RegisterUserRoute with wrong params"""
+    """Test route method in RegisterUserRoute with wrong params"""
 
     register_user_use_case = RegisterUserSpy(UserRepositorySpy())
     register_user_route = RegisterUserController(register_user_use_case)

@@ -23,7 +23,7 @@ def test_register():
     assert user_repo.insert_user_params["password"] == attibutes["password"]
 
     # Test output
-    assert response["Sucess"] is True
+    assert response["Success"] is True
     assert response["Data"]
 
 
@@ -43,5 +43,5 @@ def test_register_fail():
     assert user_repo.insert_user_params == {}
 
     # Test output
-    assert response["Sucess"] is False
+    assert response["Success"] is False
     assert response["Data"] is None

@@ -6,7 +6,7 @@ from src.domain.use_cases import RegisterUser as RegisterUserInterface
 
 
 class RegisterUser(RegisterUserInterface):
-    """Class to define usercase: Register User"""
+    """Class to define use case: Register User"""
 
     def __init__(self, user_repository: Type[UserRepository]):
         self.user_repository = user_repository
@@ -24,4 +24,4 @@ class RegisterUser(RegisterUserInterface):
         if validate_entry:
             response = self.user_repository.insert_user(name, password)
 
-        return {"Sucess": validate_entry, "Data": response}
+        return {"Success": validate_entry, "Data": response}
