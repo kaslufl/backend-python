@@ -1,5 +1,6 @@
 from typing import List
 
+from sqlalchemy.orm.exc import NoResultFound
 from src.data.interfaces import PetRepositoryInterface
 from src.domain.models.pets import Pets
 from src.infra.config import DBConnectionHandler
@@ -38,8 +39,6 @@ class PetRepository(PetRepositoryInterface):
 
             finally:
                 db_connection.session.close()
-
-        return None
 
     @classmethod
     def select_pet(cls, pet_id: int = None, user_id: int = None) -> List[Pets]:
@@ -84,11 +83,12 @@ class PetRepository(PetRepositoryInterface):
 
             return query_data
 
+        except NoResultFound:
+            return []
+
         except:
             db_connection.session.rollback()
             raise
 
         finally:
             db_connection.session.close()
-
-        return None

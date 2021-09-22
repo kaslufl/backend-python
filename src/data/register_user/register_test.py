@@ -12,15 +12,15 @@ def test_register():
     user_repo = UserRepositorySpy()
     register_user = RegisterUser(user_repo)
 
-    attibutes = {"name": faker.name(), "password": faker.word()}
+    attributes = {"name": faker.name(), "password": faker.word()}
 
     response = register_user.register(
-        name=attibutes["name"], password=attibutes["password"]
+        name=attributes["name"], password=attributes["password"]
     )
 
     # Test input
-    assert user_repo.insert_user_params["name"] == attibutes["name"]
-    assert user_repo.insert_user_params["password"] == attibutes["password"]
+    assert user_repo.insert_user_params["name"] == attributes["name"]
+    assert user_repo.insert_user_params["password"] == attributes["password"]
 
     # Test output
     assert response["Success"] is True
@@ -33,10 +33,10 @@ def test_register_fail():
     user_repo = UserRepositorySpy()
     register_user = RegisterUser(user_repo)
 
-    attibutes = {"name": faker.random_number(digits=4), "password": faker.word()}
+    attributes = {"name": faker.random_number(digits=4), "password": faker.word()}
 
     response = register_user.register(
-        name=attibutes["name"], password=attibutes["password"]
+        name=attributes["name"], password=attributes["password"]
     )
 
     # Test input
